@@ -1,7 +1,7 @@
 ##These functions together work to reduce processing time for calculating the inverse of a matrix
 ##by pulling a cached version of an already computed matrix inverse
 ##if the matrix of that inverse has not yet been calculated, it will calculate it, and 
-##store it in the cach
+##store it in the cache
 
 
 ##IR: The first function that actually finds the inverse of a given matrix
