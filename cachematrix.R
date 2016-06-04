@@ -8,7 +8,6 @@
 ##and stores it in a new matrix
 
 makeCacheMatrix <- function(x = matrix()) {
-  
   ##creating and getting matrices
   m <- NULL
   set <- function(y) {
@@ -19,9 +18,9 @@ makeCacheMatrix <- function(x = matrix()) {
   ##setting and getting the inverse of the given matrix
   setinverse <- function(solve) m <<- solve
   getinverse <- function() m
-  list(set = set, get = get,
-       setinverse = setinverse,
-       getinverse = getinverse)
+  list(set = set, get = get, 
+      setinverse = setinverse, 
+      getinverse = getinverse)
 }
 
 
@@ -30,7 +29,6 @@ makeCacheMatrix <- function(x = matrix()) {
 ##has already been calculated. If so, it returns it from the cache, if not
 ##it finds the inverse
 cacheSolve <- function(x, ...) {
-  
   m <- x$getinverse()
   ##determine if the inverse has been cached
   if(!is.null(m)) {
@@ -40,6 +38,6 @@ cacheSolve <- function(x, ...) {
   ##if the inverse wasn't cached, find the inverse and return it
   data <- x$get()
   m <- solve(data,...)
-  x$getinverse(m)
+  x$setinverse(m)
   m
 }
